@@ -1,0 +1,11 @@
+title: My cool site
+description: Text about my cool site
+images:
+  - site-feature-image.jpg
+
+license:
+  title_of_work: This website
+  link_to_work: URL
+  createor_of_work: NAME
+  link_to_creator_profile: URL
+  year_of_creation: 2021

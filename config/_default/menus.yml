@@ -1,0 +1,15 @@
+main:
+  - name: posts
+    url: /posts/
+    weight: -110
+  - name: all
+    url: /posts/
+    weight: 1
+    parent: posts
+  - name: featured posts
+    url: /posts/featured
+    weight: 2
+    parent: posts
+  - name: about
+    url: /about/
+    weight: -100

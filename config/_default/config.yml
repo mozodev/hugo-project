@@ -1,0 +1,5 @@
+# https://gohugo.io/getting-started/configuration/
+
+title: Hugo project
+languageCode: en-us
+hasCJKLanguage: true

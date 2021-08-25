@@ -1,0 +1,2 @@
+# hugo project scaffold
+
