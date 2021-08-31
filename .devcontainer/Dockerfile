@@ -1,7 +1,6 @@
 # Update the NODE_VERSION arg in docker-compose.yml to pick a Node version: 10, 12, 14
 # [Choice] Go version: 1, 1.16, 1.17
-ARG VARIANT=1
-FROM mcr.microsoft.com/vscode/devcontainers/go:0-${VARIANT}
+FROM mcr.microsoft.com/vscode/devcontainers/go:0-1
 
 # [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
 ARG NODE_VERSION="14"
