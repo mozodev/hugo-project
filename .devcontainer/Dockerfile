@@ -1,6 +1,11 @@
 # Update the NODE_VERSION arg in docker-compose.yml to pick a Node version: 10, 12, 14
-ARG NODE_VERSION=14
-FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:${NODE_VERSION}
+# [Choice] Go version: 1, 1.16, 1.17
+ARG VARIANT=1
+FROM mcr.microsoft.com/vscode/devcontainers/go:0-${VARIANT}
+
+# [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
+ARG NODE_VERSION="14"
+RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
 # VARIANT can be either 'hugo' for the standard version or 'hugo_extended' for the extended version.
 ARG VARIANT=hugo_extended
@@ -19,7 +24,7 @@ RUN apt-get update && apt-get install -y ca-certificates openssl git curl && \
     tar xf ${VERSION}.tar.gz && \
     mv hugo /usr/bin/hugo
 
-# Hugo dev server port
+# Hugo dev server portx
 EXPOSE 1313
 
 # Install rclone
